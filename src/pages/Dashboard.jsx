@@ -12,24 +12,25 @@ export default function Dashboard() {
         <>
         <Navbar />
         <div className='dashboard-container'>
-        <table>
-            <tr>
-                <td>Company Name</td>
-                <td>Price</td>
-                <td>Change</td>
-            </tr>
+            <div className='dashboard-stock'>
+                <h1 className='name'>Company Name</h1>
+                <h1 className='price'>Price</h1>
+                <h1 className='change'>Change</h1>
+            </div>
             {stocks.map((stock) => {
                 return ( 
-                    <tr className='dashboard-stock'>
+                    <div  key={stock.symbol}>
                         <Link to={`/stocks/${stock.symbol}`} key={stock.symbol}>
-                            <td>{stock.name} (${stock.symbol})</td>
-                            <td>{stock.lastPrice}</td>
-                            <td>{stock.change.toFixed(2)}</td>
+                            <div className='dashboard-stock'>
+                                <h1 className='name'>{stock.name} (${stock.symbol})</h1>
+                                <h1 className='price'>{stock.lastPrice}</h1>
+                                <h1 className='change'>{stock.change.toFixed(2)}</h1>
+                            </div>
+                            
                         </Link>
-                    </tr>                      
+                    </div>                      
                 )
             })}
-        </table>
         </div>
         </>
     )

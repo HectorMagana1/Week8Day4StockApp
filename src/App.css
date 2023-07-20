@@ -1,20 +1,23 @@
-/* .dashboard-stock {
+.dashboard-stock {
   display: grid;
-  justify-content: space-between;
+  grid-template-columns: 4fr 1fr 1fr;
+  border-bottom: 1px solid black;
 }
 
 .dashboard-container {
-  display: grid;
-  grid-template-columns: 4fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-
-} */
-
-td {
-  width: 500px;
+  display: flex;
+  flex-direction: column;
 }
 
-tr {
-  width: 90%;
-  
+.name {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+h1 {
+  padding: 1px;
+}
+
+Link {
+  color: red;
 }

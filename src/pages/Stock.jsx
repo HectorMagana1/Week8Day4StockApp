@@ -18,7 +18,7 @@ export default function Stock() {
     return (
         <div>
             <Navbar />
-            <div>
+            <div className="stock-info-container">
                 <h1>{filterValue.name}</h1>
                 <h1>{filterValue.symbol}</h1>
                 <h1>{filterValue.lastPrice}</h1>

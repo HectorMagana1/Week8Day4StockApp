@@ -9,16 +9,28 @@ export default function Dashboard() {
     console.log(stocks)
 
     return (
-        <div>
-            <Navbar />
+        <>
+        <Navbar />
+        <div className='dashboard-container'>
+        <table>
+            <tr>
+                <td>Company Name</td>
+                <td>Price</td>
+                <td>Change</td>
+            </tr>
             {stocks.map((stock) => {
-                return (
-                    
-                    <Link to={`/stocks/${stock.symbol}`} key={stock.symbol}>
-                        <h1>{stock.name}</h1>
-                    </Link>
+                return ( 
+                    <tr className='dashboard-stock'>
+                        <Link to={`/stocks/${stock.symbol}`} key={stock.symbol}>
+                            <td>{stock.name} (${stock.symbol})</td>
+                            <td>{stock.lastPrice}</td>
+                            <td>{stock.change.toFixed(2)}</td>
+                        </Link>
+                    </tr>                      
                 )
             })}
+        </table>
         </div>
+        </>
     )
 }

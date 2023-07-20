@@ -21,11 +21,11 @@ export default function Stock() {
             <div className="stock-info-container">
                 <h1>{filterValue.name}</h1>
                 <h1>{filterValue.symbol}</h1>
-                <h1>{filterValue.lastPrice}</h1>
-                <h1>{filterValue.change}</h1>
-                <h1>{filterValue.high}</h1>
-                <h1>{filterValue.low}</h1>
-                <h1>{filterValue.open}</h1>
+                <h1>Last Price: {filterValue.lastPrice}</h1>
+                <h1>Change: {filterValue.change}</h1>
+                <h1>High: {filterValue.high}</h1>
+                <h1>Low: {filterValue.low}</h1>
+                <h1>Open: {filterValue.open}</h1>
             </div>
             
         </div>

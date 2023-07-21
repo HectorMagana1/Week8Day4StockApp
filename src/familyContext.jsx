@@ -1,5 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import { useReducer, createContext, useContext, useState, useEffect } from "react";
 import data from '../data'
+import reducer from "./reducer";
 
 // creating our context here
 export const FamilyContext = createContext()
@@ -12,7 +13,18 @@ export function useFamilyContext() {
 // custom Provider component
 export function FamilyProvider(props) {
 
-    const [stocks, setStocks] = useState(data)
+    let [stocks, dispatch] = useReducer(reducer,null,()=>{
+        // console.log(data);
+        const storedData = localStorage.getItem('data')
+        const stock = data[0];
+        // stocks=data;
+        return storedData ? JSON.parse(storedData) : data;
+    })
+
+    useEffect(()=>{
+        reducer();
+        localStorage.setItem('data',JSON.stringify(stocks))
+    },[stocks])
 
     const sharedValue = {
         stocks,

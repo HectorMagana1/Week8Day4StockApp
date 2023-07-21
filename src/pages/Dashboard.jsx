@@ -6,7 +6,7 @@ import { useFamilyContext } from '../familyContext'
 export default function Dashboard() {
 
     const { stocks } = useFamilyContext()
-    console.log(stocks)
+    // console.log(stocks)
 
     return (
         <>

@@ -5,7 +5,7 @@ import { useFamilyContext } from '../familyContext'
 
 export default function Dashboard() {
 
-    const { stocks } = useFamilyContext()
+    const { data } = useFamilyContext()
     // console.log(stocks)
 
     return (
@@ -17,7 +17,7 @@ export default function Dashboard() {
                 <h1 className='price'>Price</h1>
                 <h1 className='change'>Change</h1>
             </div>
-            {stocks.map((stock) => {
+            {data.map((stock) => {
                 return ( 
                     <div  key={stock.symbol}>
                         <Link to={`/stocks/${stock.symbol}`} key={stock.symbol}>

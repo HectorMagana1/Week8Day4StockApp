@@ -5,12 +5,12 @@ import { useFamilyContext } from "../familyContext"
 
 export default function Stock() {
     
-    const { stocks } = useFamilyContext()
+    const { data } = useFamilyContext()
     const params = useParams()
     
 
     function handleData() {
-        return stocks.find((element) => element.symbol === params.symbol )
+        return data.find((element) => element.symbol === params.symbol )
     }
     
     const filterValue = handleData()
